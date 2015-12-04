@@ -1,42 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>C.ini by KeithBrodie</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>C.ini by KeithBrodie</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
+    <div class="wrapper">
+      <header>
         <h1>C.ini</h1>
-        <h2>Parameterized C language configuration file package. Generates INI file template, C structure, and file parsing code from a single parameter definition file.</h2>
-        <a href="https://github.com/KeithBrodie/c.ini" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+        <p>Parameterized C language configuration file package. Generates INI file template, C structure, and file parsing code from a single parameter definition file.</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+        <p class="view"><a href="https://github.com/KeithBrodie/c.ini">View the Project on GitHub <small>KeithBrodie/c.ini</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/KeithBrodie/c.ini/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/KeithBrodie/c.ini/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/KeithBrodie/c.ini">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
 <a id="welcome-to-cini" class="anchor" href="#welcome-to-cini" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to C.ini.</h3>
 
-<p>C.ini defines a configuration or ini file format, C structure, and parse code from a single parameter definition file by abusing the C preprocessor with multiply re-defined macro definitions.  Add or modify a parameter with one file edit and a make.  The 'struct' is redefined, parse code for reading the parameters in any order is generated, and a input file template is optionally created when the parse code is called.  C.ini makes handling configuration parameters simple and fast in your C/c++ projects.</p>
+<p>C.ini defines a configuration or ini file format, C structure, and parse code from a single parameter definition file by parsing the definition file multiple times in the C preprocessor with re-defined macros.  Parameters can be added, modified, or deleted editing parameter.def and performing a make.  Backward compatibility to old .ini files is maintained.  Undefined parameters are zero-filled in parsing.  The C 'struct' definition is updated, parse code for reading the parameters in any order is generated, and a input file template is optionally created when the parse code is called.  C.ini makes handling configuration parameters simple and fast in your C/C++ projects.</p>
+
+<h3>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why?</h3>
+
+<p>C.ini was developed for scripting ini files for Monte-Carlo simulation tools in C.  C is often the language of choice for MC simulation, but is somewhat tedious with respect to maintaining configuration definition and parsing code.  </p>
 
 <h3>
 <a id="ini-file-format" class="anchor" href="#ini-file-format" aria-hidden="true"><span class="octicon octicon-link"></span></a>INI file format</h3>
 
-<p>The INI file format is somewhat like a Fortran namelist file.  Comment lines are officially indicated with a # or % - but in fact any line can be a comment since the parser ignores lines which lack an "=" sign or a recognized parameter to the left of the "=" sign.  Repeated whitespace on the line is ignored, and parameter names must be legal 'C' field names.</p>
+<p>The INI file format is reminescent a Fortran namelist file.  Comment lines are officially indicated with a # or % - but in fact any line can be a comment since the parser ignores lines which lack an "=" sign or a recognized parameter to the left of the "=" sign.  Repeated whitespace on the line is ignored, and parameter names must be legal 'C' field names.</p>
 
 <h3>
 <a id="parameterdefinition" class="anchor" href="#parameterdefinition" aria-hidden="true"><span class="octicon octicon-link"></span></a>parameter.definition</h3>
@@ -44,31 +49,19 @@
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Created and contributed by Keith Brodie (<a href="https://github.com/KeithBrodie" class="user-mention">@KeithBrodie</a>)</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/KeithBrodie/c.ini/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/KeithBrodie/c.ini/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/KeithBrodie/c.ini"></a> is maintained by <a href="https://github.com/KeithBrodie">KeithBrodie</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<p>Post an issue - I check back when I can.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/KeithBrodie">KeithBrodie</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
-  
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>
